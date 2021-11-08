@@ -23,12 +23,12 @@
                   spaces for people to enjoy.
                   </h1>
                   <h1 class="max-w-5xl mx-auto text-justify">
-                  This potential development of the Gazania’s neighbourhood will bring much more excitement and convenience to its community than 
+                  This potential development of the Lilium’s neighbourhood will bring much more excitement and convenience to its community than 
                   you can imagine.
                   </h1>
         <section class="py-6">
           <NuxtLink
-            to="/bidadari-estate"
+            to="/bidadari-park"
             class="
               inline-flex
               items-center
@@ -44,7 +44,7 @@
               bg-theme-700
             "
           >
-            Continue To URA: Bidadari Estate
+            Continue To Bidadari Park
             <svg
               fill="none"
               xmlns="http://www.w3.org/2000/svg"

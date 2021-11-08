@@ -32,6 +32,12 @@
                   aria-current="page"
                   class="transition text-theme-600 hover:text-theme-700"
                   >The Gazania</NuxtLink
+                > &amp;
+                <NuxtLink
+                  to="/"
+                  aria-current="page"
+                  class="transition text-theme-600 hover:text-theme-700"
+                  >The Lilium</NuxtLink
                 >
                   can expect a better quality of life living in the vicinity.
                   </h1>

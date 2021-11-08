@@ -64,10 +64,13 @@
           <!-- Start Award Statement -->
             <p class="transition text-theme-600 hover:text-gold-200 text-xl font-semibold sm:text-2xl">HIGHLY COMMENDED</p>
             <p>
-              <b>✨Best Condo Interior Design (Singapore) • 2019✨</b>
+              <b>✨Best Boutique Condo Development (High Density) (Singapore) • 2019✨</b>
             </p>
             <p>
-              <b>✨Best New Private Condo Development (Singapore) • 2019✨</b>
+              <b>✨Best Boutique Condo Interior Design (Singapore) • 2019✨</b>
+            </p>
+            <p>
+              <b>✨Best Boutique Landscape Architectural Design (Singapore) • 2019✨</b>
             </p>
             <p>
               <b>✨Best Residential Green Development (Singapore) • 2019✨</b>
@@ -130,12 +133,12 @@
           </div>
           <div class="space-y-2 text-center break-words">
             <img
-              src="~assets/img/developer/track-record-6.png"
-              alt="Sol Acres"
+              src="~assets/img/developer/track-record-6.jpg"
+              alt="9 Penang Road"
               class="mx-auto rounded shadow"
             />
             <p class="text-sm font-semibold sm:text-lg">
-              Sol Acres
+              9 Penang Road
             </p>
           </div>
         </div>
