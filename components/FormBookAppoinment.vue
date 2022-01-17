@@ -315,7 +315,7 @@ export default {
         this.errors.push({ isAppointment: 'The make appt field is required.' })
       }
 
-      if (!this.errors.length) {
+      if (!this.errors.length) { // open
         // eslint-disable-next-line
         Email.send({
           Host: 'smtp.gmail.com',
@@ -337,7 +337,34 @@ export default {
           this.success = true
           this.reset()
         })
-      }
+      } // close
+      //test start
+  if (!this.errors.length) { // open
+        // eslint-disable-next-line
+        Email.send({
+          Host: 'smtp.gmail.com',
+          Username: process.env.EMAIL_USER_1,
+          Password: process.env.EMAIL_API_1,
+          To: process.env.EMAIL_USER_1,
+          From: this.email,
+          Subject: process.env.EMAIL_TITLE_1 + ' ' + this.enquiry,
+          Body:
+            '<b>Name: </b>' +
+            this.name +
+            '<br><b> Message: </b>' +
+            this.message +
+            '<br><b>Mobile: </b>' +
+            this.mobile +
+            '<br><b>Appointment: </b>' +
+            this.isAppointment,
+        }).then(() => {
+          this.success = true
+          this.reset()
+        })
+      } // close
+
+      //test end
+
     },
     reset() {
       this.enquiry = ''
