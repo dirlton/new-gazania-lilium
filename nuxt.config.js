@@ -4,9 +4,9 @@ export default {
 
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
-  router: {
+  /*router: {
     base: '/new-gazania-lilium',
-  }, 
+  }, */
 
   googleAnalytics: {
     id: 'UA-217449269-1'
