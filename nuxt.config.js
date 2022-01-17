@@ -8,6 +8,10 @@ export default {
     base: '/new-gazania-lilium',
   }, 
 
+  googleAnalytics: {
+    id: 'UA-217449269-1'
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'The Gazania',
@@ -50,7 +54,8 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['nuxt-flatpickr'],
+  modules: ['nuxt-flatpickr','@nuxtjs/google-analytics'
+],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
