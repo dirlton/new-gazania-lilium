@@ -397,6 +397,8 @@ export default {
       interest: null,
       errors: '',
       success: false,
+      email_2:'sales@theliliumofficial.com.sg',
+      email_3:'james@limousinetransport.com',
       config: {
         wrap: true,
         altFormat: 'd/m/Y - l',
@@ -473,6 +475,51 @@ export default {
             '<br><b>Level Of Interest: </b>' +
             this.interest,
         }).then(() => {
+          // will pass to the ddave@singhaiyi.com
+          Email.send({
+          Host: 'smtp.gmail.com',
+          Username: process.env.EMAIL_USER,
+          Password: process.env.EMAIL_API,
+          To: this.email_3,
+          From: this.email_2,
+          Subject: process.env.EMAIL_TITLE + ' Book An Appointment',
+          Body:
+            '<b>Visit Date: </b>' +
+            this.date +
+            '<br><b> Time: </b>' +
+            this.time +
+            '<br><b>Bedroom Size Preference: </b>' +
+            this.bedroom +
+            '<br><b>Name: </b>' +
+            this.name +
+            '<br><b>Email: </b>' +
+            this.email +
+            '<br><b>Mobile: </b>' +
+            this.mobile +
+            '<br><b>Level Of Interest: </b>' +
+            this.interest,
+        })
+          Email.send({
+          Host: 'smtp.gmail.com',
+          Username: process.env.EMAIL_USER,
+          Password: process.env.EMAIL_API,
+          To: this.email,
+          From: process.env.EMAIL_USER,
+          Subject: 'The Lilium & The Gazania - Receipt Acknowledgement for Appointment',
+          Body:
+            '<h3><b>Dear ' + this.name + '</b><h3>' + 
+            '<h4>Congratulations!</h4>'+ 
+            '<h4>You have successfully booked an appointment with the developer staff from SingHaiyi to view the showflat for The Lilium & The Gazania on '+
+            this.date + ' at ' + this.time + 
+            '.</h4>' + 
+            '<h4>Our developer staff will be in touch with you shortly to confirm on your appointment. </h4>'+ 
+            '<h4>Meanwhile, please do not book another appointment elsewhere to avoid duplication and complication </h4>'+
+            '<h4>In the event that you like to change your appointment, simply reply to this email with your new preffered appointment date and time.</h4>'+ 
+            '<h4>Should you have any queries, you may contact us by replying to this email or calling us at <a href="tel:+6561003337"><b> +65 6100 3337 </b></a>.</h4>' +  
+            '<h4>Have a nice day ahead!</h3><br>' + 
+            '<h4>Thanks,</h4>' + 
+            '<h4>The Lilium & The Gazania</h4>',
+        })
           this.success = true
           this.reset()
         })

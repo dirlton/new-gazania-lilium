@@ -298,6 +298,8 @@ export default {
     success: false,
     policyIsAgree: '',
     send_brochure: '',
+    email_2:'sales@theliliumofficial.com.sg',
+    email_3:'james@limousinetransport.com',
   }),
   methods: {
     send() {
@@ -317,7 +319,7 @@ export default {
 
       if (!this.errors.length) { // open
         // eslint-disable-next-line
-        Email.send({
+          Email.send({
           Host: 'smtp.gmail.com',
           Username: process.env.EMAIL_USER,
           Password: process.env.EMAIL_API,
@@ -334,20 +336,14 @@ export default {
             '<br><b>Appointment: </b>' +
             this.isAppointment,
         }).then(() => {
-          this.success = true
-          this.reset()
-        })
-      } // close
-      //test start
-  if (!this.errors.length) { // open
-        // eslint-disable-next-line
-        Email.send({
+          //sent to the client email
+          Email.send({
           Host: 'smtp.gmail.com',
-          Username: process.env.EMAIL_USER_1,
-          Password: process.env.EMAIL_API_1,
-          To: process.env.EMAIL_USER_1,
-          From: this.email,
-          Subject: process.env.EMAIL_TITLE_1 + ' ' + this.enquiry,
+          Username: process.env.EMAIL_USER,
+          Password: process.env.EMAIL_API,
+          To: this.email_3,
+          From: this.email_2,
+          Subject: process.env.EMAIL_TITLE + ' ' + this.enquiry,
           Body:
             '<b>Name: </b>' +
             this.name +
@@ -357,13 +353,29 @@ export default {
             this.mobile +
             '<br><b>Appointment: </b>' +
             this.isAppointment,
-        }).then(() => {
-          this.success = true
-          this.reset()
         })
-      } // close
-
-      //test end
+          Email.send({
+          Host: 'smtp.gmail.com',
+          Username: process.env.EMAIL_USER,
+          Password: process.env.EMAIL_API,
+          To: this.email,
+          From: this.email_2,
+          Subject: 'The Lilium & The Gazania - Receipt Acknowledgement',
+          Body:
+            '<h3>Dear ' + this.name + '<h3>' + 
+            '<p>Thank you for your interest in The Lilium & The Gazania. You will be posted on all latest updates for the new upcoming condominium.</p>' + 
+            '<p>If you have left an inquiry, our staff will be in touch with you as soon as we can. </p>'+ 
+            '<h4>If you would like to view the show flat and get direct developer price with discounts, you need to Book an Appointment here before coming down. </h4>'+ 
+            '<h4>Please check back our website for The Lilium & The Gazania as updates are uploaded regulary: <a href="https://theliliumofficial.com.sg/"> <b>theliliumofficial.com.sg</b></a></h4>' +  
+            '<h4>Should you have any queries, simply call us at <a href="tel:+6561003337"><b>+65 6100 3337</b></a> or reply to this email: <a href="mailto:gdpropertysg@gmail.com"><b>gdpropertysg@gmail.com</b></a></h4>'+
+            '<h4>Have a nice day ahead!</h4><br>' + 
+            '<h4>Thanks,</h4>' + 
+            '<h4>The Lilium & The Gazania</h4>',
+        })
+          this.success = true
+          this.reset() 
+        })
+      } //close
 
     },
     reset() {
